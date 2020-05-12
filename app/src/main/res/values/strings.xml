@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">houseDashboard</string>
-    <string name="hello_world">2020-05-12 21:05:30</string>
+    <string name="date">5月12</string>
+    <string name="time">21:05:30</string>
 </resources>

@@ -13,12 +13,14 @@ class MainActivity : Activity() {
 
     private val handler: Handler = Handler()
 
-    lateinit var mainText: TextView
+    lateinit var dateText: TextView
+    lateinit var timeText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        mainText = findViewById(R.id.main_text)
+        dateText = findViewById(R.id.date_text)
+        timeText = findViewById(R.id.time_text)
         target()
 
         window.decorView.apply {
@@ -35,8 +37,11 @@ class MainActivity : Activity() {
         handler.postDelayed(
             {
                 val date = Date()
-                SimpleDateFormat("yyyy-MM-dd HH:MM:ss").apply {
-                    mainText.text = this.format(date)
+                SimpleDateFormat("HH:MM:ss").apply {
+                    timeText.text = this.format(date)
+                }
+                SimpleDateFormat("M月dd日").apply {
+                    dateText.text = this.format(date)
                 }
                 target()
             },
